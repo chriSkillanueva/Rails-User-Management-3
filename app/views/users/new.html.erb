@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add a User</title>
+    </head>
+    <body>
+        <h1>Add a User</h1>
+
+        <form action="/create" method="post">
+	        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden"><br><br>
+            <label><u>First Name:</u></label><input type="text" name="first_name"> <%= flash[:first_name_error] %><br><br>
+            <label><u>Last Name:</u></label><input type="text" name="last_name"> <%= flash[:last_name_error] %><br><br>
+            <label><u>Email:</u></label><input type="text" name="email"> <%= flash[:email_error] %><br><br>
+            <label><u>Password:</u></label><input type="password" name="password"> <%= flash[:password_error] %><br><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <br>
+        <a href="/"><button>Back</button></a>
+    </body>
+</html>
